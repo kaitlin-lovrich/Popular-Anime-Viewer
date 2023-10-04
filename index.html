@@ -21,20 +21,75 @@
   <header>
     <div class="row">
       <h1>Anime</h1>
-      <div class="container">
-        <a href="#" class="active">HOME</a>
-        <a href="#">TV SHOWS</a>
-        <a href="#">MOVIES</a>
-        <a href="#">MY FAVORITES</a>
+      <div class="container desktop">
+        <a href="#home" class="active">HOME</a>
+        <a href="#tv-shows">TV SHOWS</a>
+        <a href="#movies">MOVIES</a>
+        <a href="#my-favorites">MY FAVORITES</a>
       </div>
-      <div>
+      <div id="input-div" class="desktop">
         <label for="search"></label>
         <input id="search" name="search" value="Search Title">
       </div>
     </div>
   </header>
   <main class="container">
+    <div class="mobile">
+      <div class="categories">
+        <a href="#tv-shows">TV SHOWS</a>
+        <a href="#movies">MOVIES</a>
+      </div>
+    </div>
+    <div>
+      <ul id="#titles" class="row">
+        <li>
+          <div>
+            <img src="https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/689e2efcf9f192ba6c0f7a538ee99027.jpe">
+          </div>
+        </li>
+        <li>
+          <div>
+            <img
+              src="https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/689e2efcf9f192ba6c0f7a538ee99027.jpe">
+          </div>
+        </li>
+      </ul>
+      <ul class="row">
+        <li>
+          <div>
+            <img src="https://m.media-amazon.com/images/M/MV5BN2E2OTgzODktMjBhYy00MjJjLWI0OTgtNGYxOGNhMWMxOWE4XkEyXkFqcGdeQXVyMzgxODM4NjM@._V1_.jpg">
+          </div>
+        </li>
+        <li>
+          <div>
+            <img
+              src="https://m.media-amazon.com/images/M/MV5BN2E2OTgzODktMjBhYy00MjJjLWI0OTgtNGYxOGNhMWMxOWE4XkEyXkFqcGdeQXVyMzgxODM4NjM@._V1_.jpg">
+          </div>
+        </li>
+      </ul>
+      <ul class="row">
+        <li>
+          <div>
+            <img
+              src="https://m.media-amazon.com/images/M/MV5BN2E2OTgzODktMjBhYy00MjJjLWI0OTgtNGYxOGNhMWMxOWE4XkEyXkFqcGdeQXVyMzgxODM4NjM@._V1_.jpg">
+          </div>
+        </li>
+        <li>
+          <div>
+            <img
+              src="https://m.media-amazon.com/images/M/MV5BN2E2OTgzODktMjBhYy00MjJjLWI0OTgtNGYxOGNhMWMxOWE4XkEyXkFqcGdeQXVyMzgxODM4NjM@._V1_.jpg">
+          </div>
+        </li>
+      </ul>
+    </div>
   </main>
+  <footer>
+    <div class="mobile icons">
+      <a href="#home" class="active"><i class="fa-solid fa-house"></i></a>
+      <a href="#search"><i class="fa-solid fa-magnifying-glass"></i></a>
+      <a href="#my-favorites"><i class="fa-regular fa-heart"></i></a>
+    </div>
+  </footer>
 
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>

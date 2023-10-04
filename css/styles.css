@@ -4,15 +4,17 @@ body {
   text-shadow: 0 2px 2px rgb(0, 0, 0, 0.75);
   font-family: "Source Sans 3", sans-serif;
   letter-spacing: 0.03rem;
-  background: linear-gradient(rgb(51, 31, 31), rgb(119, 90, 90));
+
+  /* min-height: 100vh; */
+  background: linear-gradient(rgb(40, 20, 20), rgb(119, 90, 90), rgb(40, 20, 20));
 }
 
 h1 {
   line-height: 1;
-  font-size: 1.9rem;
+  font-size: 2.5rem;
   font-family: "Ruslan Display", sans-serif;
   letter-spacing: 0.01rem;
-  padding: 0 1rem 0 0;
+  padding: 0.5rem 1rem 0 0.4rem;
   -webkit-text-stroke: 0.4px rgb(17, 109, 110);
   margin: 0;
 }
@@ -21,20 +23,16 @@ header {
   background: linear-gradient(rgb(78, 54, 54), rgb(78, 54, 54, 0.95));
   color: rgb(229, 229, 229);
   display: flow-root;
+  box-shadow: 0 2px 2px rgb(0, 0, 0, 0.75);
+}
+
+footer > div {
+  width: 26rem;
 }
 
 header > div {
   padding: 0.4rem 1rem;
-  align-items: baseline;
-  margin: 0.3rem;
-}
-
-img {
-  width: 100%;
-}
-
-a.active {
-  color: rgb(229, 229, 229);
+  align-items: center;
 }
 
 a {
@@ -43,14 +41,67 @@ a {
   font-family: "Russo One", sans-serif;
   line-height: 1;
   padding: 0.4rem;
+  font-size: 0.9rem;
+}
+
+img {
+  width: 100%;
+}
+
+div.categories {
+  background: linear-gradient(rgb(78, 54, 54), rgb(78, 54, 54, 0));
+  width: 15rem;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.categories > a {
+  font-size: 1.1rem;
+  padding: 0 0.8rem;
+}
+
+a.active {
+  color: rgb(229, 229, 229);
+}
+
+#input-div {
+  padding: 0 0.4rem 0 1rem;
 }
 
 #search {
   font-family: "Source Sans 3", sans-serif;
+  font-size: 0.9rem;
   background: linear-gradient(rgb(50, 30, 30, 0.85), rgb(119, 90, 90, 0.3));
-  color: rgb(176, 176, 176);
+  color: rgb(176, 176, 176, 0.75);
   padding: 0.4rem;
   border-radius: 5px;
   border-style: none;
   text-shadow: 0 2px 2px rgb(0, 0, 0, 0.75);
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+  justify-content: center;
+}
+
+li {
+  padding: 0 0.8rem 1.5rem;
+}
+
+li > div {
+  width: 150px;
+  height: 200px;
+}
+
+li > div > img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  border-radius: 5px;
+  box-shadow: 0 2px 2px rgb(0, 0, 0, 0.75);
+}
+
+i {
+  font-size: 23px;
 }
