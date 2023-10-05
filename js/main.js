@@ -54,14 +54,14 @@ function getGenreId() {
     function delayGetGenreID(ms) {
       return new Promise(resolve => setTimeout(resolve, ms));
     }
-    const createUser = id => {
+    const getGenre = id => {
       return fetch(
         `https://api.jikan.moe/v4/anime?order_by=popularity&genres=${id}`
       );
     };
     async function runPromises() {
       for (const genre of xhr.response.data) {
-        const response = await createUser(genre.mal_id);
+        const response = await getGenre(genre.mal_id);
         const genreID = await response.json();
 
         const $h2 = document.createElement('h2');
