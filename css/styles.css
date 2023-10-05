@@ -61,7 +61,7 @@ img {
 
 div.categories {
   background: linear-gradient(rgb(78, 54, 54), rgb(78, 54, 54, 0));
-  width: 15rem;
+  width: 16rem;
   border-radius: 5px;
   text-align: center;
 }
@@ -133,18 +133,20 @@ span {
   color: rgb(230, 230, 230, 0.69);
   font-size: 40px;
   position: absolute;
-  left: -15px;
-  bottom: 80px;
+  left: 5px;
+  bottom: 110px;
   transition: all 0.2s;
+  z-index: 1;
 }
 
 .fa-chevron-right {
   color: rgb(230, 230, 230, 0.69);
   font-size: 40px;
   position: absolute;
-  right: -15px;
-  bottom: 80px;
+  right: 5px;
+  bottom: 110px;
   transition: all 0.2s;
+  z-index: 1;
 }
 
 #left-arrow:hover #right-arrow:hover {
