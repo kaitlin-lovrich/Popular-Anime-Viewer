@@ -22,15 +22,18 @@ function populateRow(urlQuery, genreOrCategoryName) {
   xhr.addEventListener('load', function () {
     // console.log('xhr.status:', xhr.status);
     // console.log('xhr.response:', xhr.response);
-    for (const title of xhr.response.data) {
-      const $titleImage = renderTitles(title);
-      const $ul = document.createElement('ul');
-      $titles.appendChild($ul);
-      $ul.appendChild($titleImage);
-    }
     const $h2 = document.createElement('h2');
     $h2.textContent = genreOrCategoryName.toUpperCase();
+    const $ul = document.createElement('ul');
+    $ul.className = 'row';
     $titles.appendChild($h2);
+
+    for (const title of xhr.response.data) {
+      const $titleImage = renderTitles(title);
+      // console.log('$titleImage', $titleImage);
+      $ul.appendChild($titleImage);
+    }
+    $titles.appendChild($ul);
   });
   xhr.send();
 }
