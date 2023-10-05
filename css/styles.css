@@ -19,6 +19,17 @@ h1 {
   margin: 0;
 }
 
+h2 {
+  color: rgb(176, 176, 176);
+  font-family: "Russo One", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.06rem;
+  font-size: 1.2rem;
+  padding: 0 0 0 1.3rem;
+  line-height: 1rem;
+  width: 100%;
+}
+
 header {
   background: linear-gradient(rgb(78, 54, 54), rgb(78, 54, 54, 0.95));
   color: rgb(229, 229, 229);
@@ -56,7 +67,7 @@ div.categories {
 }
 
 .categories > a {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   padding: 0 0.8rem;
 }
 
@@ -112,8 +123,32 @@ i {
 
 span {
   font-size: 1.5rem;
-  color: rgb(230, 230, 230, 0.69);
+  color: rgba(230, 230, 230, 0.69);
   position: absolute;
   right: 5px;
   top: 5px;
+}
+
+.fa-chevron-left {
+  color: rgb(230, 230, 230, 0.69);
+  font-size: 40px;
+  position: absolute;
+  left: -15px;
+  bottom: 80px;
+  transition: all 0.2s;
+}
+
+.fa-chevron-right {
+  color: rgb(230, 230, 230, 0.69);
+  font-size: 40px;
+  position: absolute;
+  right: -15px;
+  bottom: 80px;
+  transition: all 0.2s;
+}
+
+#left-arrow:hover #right-arrow:hover {
+  color: rgb(229, 229, 229);
+  font-size: 43px;
+  -webkit-text-stroke: 1px rgb(17, 109, 110);
 }

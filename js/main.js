@@ -9,22 +9,37 @@ function renderTitles(title) {
   $img.setAttribute('alt', 'title image');
   const $span = document.createElement('span');
   $span.className = 'fa-solid fa-ellipsis-vertical';
-
   $li.appendChild($div);
   $div.appendChild($img);
   $div.appendChild($span);
   return $li;
 }
 
-const xhr = new XMLHttpRequest();
-xhr.open('GET', 'https://api.jikan.moe/v4/anime?type=tv&order_by=popularity');
-xhr.responseType = 'json';
-xhr.addEventListener('load', function () {
-  // console.log('xhr.status:', xhr.status);
-  // console.log('xhr.response:', xhr.response);
-  for (const title of xhr.response.data) {
-    const $titleImage = renderTitles(title);
-    $titles.appendChild($titleImage);
-  }
-});
-xhr.send();
+function populateRow(urlQuery, genreOrCategoryName) {
+  const xhr = new XMLHttpRequest();
+  xhr.open('GET', urlQuery);
+  xhr.responseType = 'json';
+  xhr.addEventListener('load', function () {
+    // console.log('xhr.status:', xhr.status);
+    // console.log('xhr.response:', xhr.response);
+    for (const title of xhr.response.data) {
+      const $titleImage = renderTitles(title);
+      const $ul = document.createElement('ul');
+      $titles.appendChild($ul);
+      $ul.appendChild($titleImage);
+    }
+    const $h2 = document.createElement('h2');
+    $h2.textContent = genreOrCategoryName.toUpperCase();
+    $titles.appendChild($h2);
+  });
+  xhr.send();
+}
+
+populateRow('https://api.jikan.moe/v4/anime?order_by=popularity&genres=fantasy', 'Fantasy');
+populateRow('https://api.jikan.moe/v4/anime?order_by=popularity', 'Popular');
+
+// Position arrow so it is relative to the edge of the screen, not the element? make it so it appears IF the ul row is being hovered
+
+// How to make elements scroll off the screen?
+
+// Why wont both queries run?
