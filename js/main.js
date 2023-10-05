@@ -20,7 +20,6 @@ function populateRow(urlQuery, genreOrCategoryName) {
   xhr.open('GET', urlQuery);
   xhr.responseType = 'json';
   xhr.addEventListener('load', function () {
-    // console.log('xhr.response:', xhr.response);
     const $h2 = document.createElement('h2');
     $h2.textContent = genreOrCategoryName.toUpperCase();
     const $div = document.createElement('div');
@@ -52,7 +51,7 @@ function getGenreId() {
   xhr.open('GET', 'https://api.jikan.moe/v4/genres/anime?filter=genres');
   xhr.responseType = 'json';
   xhr.addEventListener('load', async function () {
-    function delay(ms) {
+    function delayGetGenreID(ms) {
       return new Promise(resolve => setTimeout(resolve, ms));
     }
     const createUser = id => {
@@ -62,7 +61,6 @@ function getGenreId() {
     };
     async function runPromises() {
       for (const genre of xhr.response.data) {
-        // console.log('genre', genre);
         const response = await createUser(genre.mal_id);
         const genreID = await response.json();
 
@@ -87,8 +85,7 @@ function getGenreId() {
         }
         $div.appendChild($ul);
         $div.appendChild($i2);
-        // console.log('genreID', genreID);
-        await delay(1000); // 1s
+        await delayGetGenreID(1000); // 1s
       }
     }
     runPromises();
