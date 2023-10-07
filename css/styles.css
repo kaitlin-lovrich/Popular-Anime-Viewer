@@ -147,7 +147,7 @@ span {
   z-index: 1;
 }
 
-#left-arrow:hover #right-arrow:hover {
+.fa-chevron-left:hover .fa-chevron-right:hover {
   color: rgb(229, 229, 229);
   font-size: 43px;
   -webkit-text-stroke: 1px rgb(17, 109, 110);
