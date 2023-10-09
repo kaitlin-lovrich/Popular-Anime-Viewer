@@ -192,23 +192,46 @@ function showPageView(view) {
 }
 
 function showSearchView() {
-  // console.log('showSearchView function running');
-
-  // console.log('showSearchView data.lastView:', data.lastView);
   setActive($searchD);
   setActive($searchM);
   const xhr = new XMLHttpRequest();
   xhr.open('GET', 'https://api.jikan.moe/v4/anime?order_by=popularity');
   xhr.responseType = 'json';
   xhr.addEventListener('load', function () {
-    // console.log('xhr.response:', xhr.response);
-    renderRow('Search Results', xhr.response.data);
+    searchInput();
     renderRow('Popular Picks', xhr.response.data);
   });
   xhr.send();
-  // const response = await fetch('https://api.jikan.moe/v4/anime?order_by=popularity');
-  // const popularPicks = await response.json();
-  // console.log(popularPicks);
+}
+
+function searchInput() {
+  let timeoutId = null;
+  $searchD.addEventListener('input', searchInput);
+  function searchInput(event) {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => {
+
+      const input = event.target.value.replaceAll(' ', '-').toLowerCase();
+      // console.log('input', input);
+      const xhr = new XMLHttpRequest();
+      xhr.open(
+        'GET',
+        `https://api.jikan.moe/v4/anime?order_by=popularity&q=${input}`
+      );
+      xhr.responseType = 'json';
+      xhr.addEventListener('load', function () {
+        const regex = /Tokyo Ghoul/;
+        const searchObjects = [];
+        for (const obj of xhr.response.data) {
+          if (regex.test(obj.title_english)) {
+            searchObjects.push(obj);
+          }
+        }
+        renderRow('Search Results', searchObjects);
+      });
+      xhr.send();
+    }, 3000);
+  }
 }
 
 // Uses previous view data to keep user on same page if window is refreshed
@@ -235,35 +258,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // console.log('DOMContentLoaded "else" running');
   }
 });
-
-// $searchD.addEventListener('submit', submitSearchInput);
-// function submitSearchInput(event) {
-//   event.preventDefault();
-//   const title = $searchD.elements.search.value;
-// }
-
-$searchD.addEventListener('input', searchInput);
-function searchInput(event) {
-  // console.log('searchInput event fired');
-
-  const timeoutId = setTimeout(() => {
-
-    const input = event.target.value.replaceAll(' ', '-').toLowerCase();
-    // console.log('input', input);
-
-    const xhr = new XMLHttpRequest();
-    xhr.open(
-      'GET',
-      `https://api.jikan.moe/v4/anime?order_by=popularity&q=${input}`
-    );
-    xhr.responseType = 'json';
-    xhr.addEventListener('load', function () {
-      renderRow('Search Results', xhr.response.data);
-    });
-    xhr.send();
-
-  }, 3000);
-}
 
 // Populates the homepage with both the TV shows and Movies when clicked
 $homeD.addEventListener('click', showAllTitles);
@@ -347,3 +341,5 @@ window.addEventListener('resize', function () {
 
 // if you click on tv shows and dont let it finish loading before clicking search, it continues running after search has finished running
 // same for all window.stop stops it from loading temporarily but doesnt kill the process
+
+setActive($searchM);
