@@ -244,12 +244,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
 $searchD.addEventListener('input', searchInput);
 function searchInput(event) {
-  console.log('searchInput event fired');
+  // console.log('searchInput event fired');
 
   const timeoutId = setTimeout(() => {
 
     const input = event.target.value.replaceAll(' ', '-').toLowerCase();
-    console.log(input);
+    // console.log('input', input);
 
     const xhr = new XMLHttpRequest();
     xhr.open(
@@ -270,7 +270,7 @@ $homeD.addEventListener('click', showAllTitles);
 $homeM.addEventListener('click', showAllTitles);
 $backArrow.addEventListener('click', showAllTitles);
 function showAllTitles() {
-  console.log('showAllTitles event handler running');
+  // console.log('showAllTitles event handler running');
   if (data.lastView === 'search') {
     resetSearchMobile();
   }
@@ -278,7 +278,7 @@ function showAllTitles() {
     window.stop();
     $titles.innerHTML = '';
     data.lastView = 'home';
-    console.log('showAllTitles data.lastView:', data.lastView);
+    // console.log('showAllTitles data.lastView:', data.lastView);
     showPageView('home');
   }
 }
@@ -287,12 +287,12 @@ function showAllTitles() {
 $tvShowsD.addEventListener('click', fiterTv);
 $tvShowsM.addEventListener('click', fiterTv);
 function fiterTv() {
-  console.log('filterTv event listener running');
+  // console.log('filterTv event listener running');
   if (data.lastView !== 'tv-shows') {
     window.stop();
     $titles.innerHTML = '';
     data.lastView = 'tv-shows';
-    console.log('filterTv data.lastView:', data.lastView);
+    // console.log('filterTv data.lastView:', data.lastView);
     showPageView('tv-shows');
   }
 }
@@ -301,12 +301,12 @@ function fiterTv() {
 $moviesD.addEventListener('click', filterMovies);
 $moviesM.addEventListener('click', filterMovies);
 function filterMovies() {
-  console.log('filterMovies event listener running');
+  // console.log('filterMovies event listener running');
   if (data.lastView !== 'movies') {
     window.stop();
     $titles.innerHTML = '';
     data.lastView = 'movies';
-    console.log('filterMovies data.lastView:', data.lastView);
+    // console.log('filterMovies data.lastView:', data.lastView);
     showPageView('movies');
   }
 }
