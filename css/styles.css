@@ -152,3 +152,33 @@ span {
   font-size: 43px;
   -webkit-text-stroke: 1px rgb(17, 109, 110);
 }
+
+header.search-mobile {
+  justify-content: center;
+}
+
+div.row.search-mobile {
+  width: 25rem;
+}
+
+div#input-div.search-mobile {
+  padding: 0.7rem 0;
+  display: flex;
+  width: 100%;
+  margin: 0.3rem;
+}
+
+i#back.fa-chevron-left {
+  position: sticky;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  font-size: 33px;
+  margin: 0.6rem 1.2rem 0.6rem 0;
+}
+
+.search-mobile > #search {
+  padding: 0.5rem;
+  font-size: 1.6rem;
+  width: 100%;
+}

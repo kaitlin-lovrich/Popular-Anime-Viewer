@@ -18,25 +18,32 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-
+  <!-- reset header's class to '' from 'search-mobile' -->
   <header>
-    <div class="row">
+    <!-- reset div.row's class to 'row' from 'row search-mobile'-->
+    <div id="header-div" class="row">
+      <!-- reset h1' class to '' from 'hide-search-mobile' -->
       <h1>Anime</h1>
+      <!-- reset desktopDiv's class from 'container desktop' to 'container hide-search-mobile' -->
       <div class="container desktop">
         <a href="#home" class="active" id="home">HOME</a>
         <a href="#tv-shows" id="tv-shows">TV SHOWS</a>
         <a href="#movies" id="movies">MOVIES</a>
         <a href="#my-favorites" id="my-favorites">MY FAVORITES</a>
       </div>
+      <!-- reset div#input-div's class to 'desktop' from 'search-mobile' -->
       <div id="input-div" class="desktop">
+        <!-- reset i#back.fa-chevron-left's class to 'hide-search-mobile fa-solid fa-chevron-left' from 'fa-solid fa-chevron-left' -->
+        <i id="back" class="hide-search-mobile fa-solid fa-chevron-left"></i>
         <label for="search"></label>
-        <input id="search" name="search" value="Search Title">
+        <!-- reset input#search's class to '' from 'search-mobile' -->
+        <input id="search" name="search" placeholder="Search Title">
       </div>
     </div>
   </header>
 
   <main class="container">
-    <div class="mobile">
+    <div class="mobile hide-search-mobile">
       <div class="categories">
         <a href="#tv-shows" class="tv-shows">TV SHOWS</a>
         <a href="#movies" class="movies">MOVIES</a>
@@ -45,6 +52,7 @@
     <div id="titles"></div>
   </main>
 
+  <!-- reset footer's class to '' from 'hide-search-mobile' -->
   <footer>
     <div class="mobile icons">
       <a href="#home" class="home active"><i class="fa-solid fa-house"></i></a>
@@ -57,3 +65,7 @@
   <script src="js/main.js"></script>
 </body>
 </html>
+
+<!-- give classes to style mobile, remove once you know what the look like and give the elements those classes inside the show search view function. remove classes in the setActive() function -->
+
+<!-- modify angle css to be more specific -->

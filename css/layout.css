@@ -1,6 +1,9 @@
-.hidden {
+.hidden,
+.hide-search-mobile {
   display: none !important;
 }
+
+/* .hide-search-mobile */
 
 .container {
   margin: 0 auto;

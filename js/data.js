@@ -1,11 +1,12 @@
 /* exported data */
+
 let data = {
   lastView: ''
 };
 
 function stringifyData(event) {
   const dataJSON = JSON.stringify(data);
-  localStorage.setItem('javascript-local-storrage', dataJSON);
+  localStorage.setItem('javascript-local-storage', dataJSON);
 }
 window.addEventListener('beforeunload', stringifyData);
 
